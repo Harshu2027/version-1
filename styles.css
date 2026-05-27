@@ -99,3 +99,70 @@ h1 {
 #addStudentPage button:hover, #editStudentPage button:hover {
     background-color: darkgreen;
 }
+#addStudentForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+}
+#viewStudentsPage table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#viewStudentsPage th, #viewStudentsPage td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+#viewStudentsPage th {
+    background-color: #f2f2f2;
+}
+#studentTable {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+#studentsList {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #cf39e3;
+    text-align: center;
+}
+#studentsList ul {
+    list-style-type: none;
+    padding: 0;
+}
+#studentsList li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#studentsList li:hover {
+    background-color: #e2e6ea;
+}
+#studentsListBody{
+    margin-top: 20px;
+    font-size: 16px;
+    color: #cf39e3;
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #e2e6ea;
+}
