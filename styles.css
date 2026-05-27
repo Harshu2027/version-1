@@ -24,6 +24,8 @@ a:hover {
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center;
+    margin: 20px auto;
 }
 h1 {
     color: black;
@@ -39,4 +41,61 @@ h1 {
     font-size: 16px;
     color: #67dbf5;
     text-align: center;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+}
+.login-form input {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+.login-form button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background-color: darkgreen;
+}
+#logoutPage {
+    text-align: center;
+    margin-top: 50px;
+}
+#logoutPage button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#logoutPage button:hover {
+    background-color: darkblue;
+}
+
+#addStudentPage, #editStudentPage, #viewStudentPage {
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+}
+#addStudentPage input, #editStudentPage input {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+#addStudentPage button, #editStudentPage button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#addStudentPage button:hover, #editStudentPage button:hover {
+    background-color: darkgreen;
 }
