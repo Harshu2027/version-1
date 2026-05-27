@@ -8,9 +8,9 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a> |
-        <a href="dashboard.html">Dashboard</a> |
-        <a href="edit-student.html">Edit Student</a> |
+        <a href="index.html">Home</a> 
+        <a href="dashboard.html">Dashboard</a> 
+        <a href="edit-student.html">Edit Student</a> 
         <a href="logout.html">Logout</a>
     </nav>
 
@@ -32,6 +32,8 @@
             studentDiv.textContent = `Name: ${student.name}, Roll No: ${student.rollNo}`;
             studentsList.appendChild(studentDiv);
         });
+        console.log('Students loaded:', students);
+        studentsList.appendChild(studentDiv);
     </script>
     </body>
 </html>

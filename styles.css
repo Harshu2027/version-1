@@ -2,6 +2,7 @@ p {
     font-size: 18px;
     font-family: Arial, sans-serif;
     color: blue;
+    text-align: center;
 }
 nav {
     background-color: green;
@@ -12,4 +13,30 @@ a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+}
+a:hover {
+    text-decoration: underline;
+    color: yellow;
+}
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h1 {
+    color: black;
+    text-align: center;
+}
+#dashboardPage {
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+}
+#userInfo {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #67dbf5;
+    text-align: center;
 }
