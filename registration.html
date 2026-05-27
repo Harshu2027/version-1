@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <a href="index.html">Home</a>
-    <a href="loginform.html">Login</a>
-    <title>College Management Portal</title>
-   
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="loginform.html">Login</a>
+    </nav>
 
     <div id="registerPage" class="card">
         <h2>Register</h2>
-        <form id="regForm" >
+        <form id="regForm">
             <input type="text" id="regUser" placeholder="Username" required><br><br>
             <input type="email" id="regEmail" placeholder="Email" required><br><br>
             <input type="password" id="regPass" placeholder="Password" required minlength="6"><br><br>
-            <input type="radio" name="gender" value="Male" checked> Male<br><br>
-            <input type="radio" name="gender" value="Female"> Female<br><br>
+            <label><input type="radio" name="gender" value="Male" checked> Male</label><br><br>
+            <label><input type="radio" name="gender" value="Female"> Female</label><br><br>
             <input type="text" id="regRoll" placeholder="Roll No" required><br><br>
             <input type="text" id="regBranch" placeholder="Branch" required><br><br>
             <input type="text" id="regSection" placeholder="Section" required><br><br>
@@ -26,15 +28,20 @@
     </div>
 
     <script>
-        
-        document.getElementById('regForm').addEventListener('submit', (e) => {
+        document.getElementById('regForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            localStorage.setItem('user', JSON.stringify({}));
-        });
-
-        document.getElementById('regForm').addEventListener('submit',(e) =>{
-            e.preventDefault();
-            localStorage.getElementById('name','rollno','branch','sec');
+            const user = {
+                username: document.getElementById('regUser').value.trim(),
+                email: document.getElementById('regEmail').value.trim(),
+                password: document.getElementById('regPass').value,
+                gender: document.querySelector('input[name="gender"]:checked').value,
+                rollno: document.getElementById('regRoll').value.trim(),
+                branch: document.getElementById('regBranch').value.trim(),
+                section: document.getElementById('regSection').value.trim()
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+            alert('Registration successful. Please login.');
+            window.location.href = 'loginform.html';
         });
     </script>
 </body>

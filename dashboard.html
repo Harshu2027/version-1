@@ -4,24 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <a href="public_pages/index.html">Home</a>
-    <a href="public_pages/login.html">Login</a>
-    <a href="public_pages/registration.html">Register</a>
 </head>
 <body>
+    <nav>
+        <a href="dashboard.html">Dashboard</a> |
+        <a href="add-student.html">Add Student</a> |
+        <a href="edit-student.html">Edit Student</a> |
+        <a href="view-student.html">View Students</a> |
+        <a href="logout.html">Logout</a>
+    </nav>
 
-<div id="dashboardPage" class="card hidden" style="width: 500px;">
-    <h2>Welcome to Dashboard</h2>
-    <div id="userInfo"></div>
-    <label for="Rollno">Enter Rollno</label>
-    <input type="text" placeholder="Enter rollno"><br><br>
-    <button onclick="logout()" style="background:#dc3545; margin-top:20px;">Logout</button>
-</div>
-<script>
-    function logout(){
-        showPage('loginPage');
-    }
-</script>
+    <div id="dashboardPage" class="card" style="width: 500px; margin-top: 20px;">
+        <h2>Welcome to Dashboard</h2>
+        <div id="userInfo"></div>
+        <button onclick="logout()" style="background:#dc3545; margin-top:20px;">Logout</button>
+    </div>
 
+    <script>
+        function ensureLoggedIn() {
+            const user = JSON.parse(localStorage.getItem('user') || 'null');
+            const loggedIn = localStorage.getItem('loggedIn') === 'true';
+            if (!user || !loggedIn) {
+                window.location.href = 'loginform.html';
+                return null;
+            }
+            return user;
+        }
+
+        const user = ensureLoggedIn();
+        //if (user) {
+          //  document.getElementById('userInfo').textContent = `Logged in as ${user.username} (${user.email}) — Roll No ${user.rollno}, ${user.branch} / ${user.section}`;
+        //}
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'logout.html';
+        }
+    </script>
 </body>
 </html>

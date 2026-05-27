@@ -1,11 +1,19 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <title>Logout</title>
-    <a href="loginform.html">Login</a>
-    <a href="index.html">index</a>
 </head>
 <body>
-    
+    <h2>You have been logged out.</h2>
+    <p>
+        <a href="loginform.html">Login again</a> |
+        <a href="index.html">Home</a>
+    </p>
+
+    <script>
+        localStorage.removeItem('loggedIn');
+    </script>
 </body>
+</html>

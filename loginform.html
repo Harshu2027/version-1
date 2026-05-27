@@ -3,26 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <a href="index.html">Home</a>
-    <a href="registration.html">Register</a>
-   
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-<div id="loginPage" class="card hidden">
-    <h2>Login</h2>
-    <form id="loginForm">
-        <input type="text" id="loginUser" placeholder="Username" required><br><br>
-        <input type="password" id="loginPass" placeholder="Password" required><br><br>
-        <button type="submit">Login</button>
-        <p id="loginError" style="color:red; font-size:0.8rem;"></p>
-    </form>
-</div>
-<script>
-    
-</script>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="registration.html">Register</a>
+    </nav>
 
+    <div id="loginPage" class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUser" placeholder="Username" required><br><br>
+            <input type="password" id="loginPass" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+            <p id="loginError" style="color:red; font-size:0.8rem;"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('loginUser').value.trim();
+            const password = document.getElementById('loginPass').value;
+            const loginError = document.getElementById('loginError');
+            const storedUser = localStorage.getItem('user');
+
+            if (!storedUser) {
+                loginError.textContent = 'No registered user found. Please register first.';
+                return;
+            }
+
+            const user = JSON.parse(storedUser);
+            if (username === user.username && password === user.password) {
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = 'dashboard.html';
+            } else {
+                loginError.textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
 </body>
 </html>
 
